@@ -3,7 +3,7 @@ services:
     name: keyleak-detector-api
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python -m gunicorn app:app
+    startCommand: python app.py
     envVars:
       - key: PYTHON_VERSION
         value: "3.11"
