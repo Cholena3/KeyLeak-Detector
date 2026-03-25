@@ -1,7 +1,10 @@
 """
-CredShield - Flask API Server
+KeyLeak Detector - Flask API Server
 Main API for the credential leak detection framework.
 """
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from detector import scan_text, get_supported_key_types, shannon_entropy
