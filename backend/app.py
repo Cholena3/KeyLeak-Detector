@@ -148,6 +148,11 @@ for f in DEMO_FINDINGS[:4]:
 
 # ── API Routes ───────────────────────────────────────────────────────────────
 
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify({"service": "KeyLeak Detector API", "version": "1.0.0", "status": "running", "docs": "/api/health"})
+
+
 @app.route("/api/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok", "service": "KeyLeak Detector API", "version": "1.0.0"})
